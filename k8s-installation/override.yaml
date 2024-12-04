@@ -1,0 +1,35 @@
+#extraSecrets:
+#  my-airflow-connections:
+#    data: |
+#      AIRFLOW_CONN_MYCONNID: <base64 encoded connection string>
+
+# Default airflow repository -- overridden by all the specific images below
+#defaultAirflowRepository:  # Update it with the registry image. 
+
+# Default airflow tag to deploy
+#defaultAirflowTag: "latest"
+
+# Specify the executor to use, it's recommended to use KubernetesExecutor
+# executor: "KubernetesExecutor"
+
+#env: 
+#  - name: "AIRFLOW__KUBERNETES_EXECUTOR__DELETE_WORKER_PODS"
+#    value: "False"
+
+# To limit the resources for workers pods, uncomment the following
+# If you want to limit resources e.g. triggerer then you can do something similar
+# read: https://airflow.apache.org/docs/helm-chart/stable/index.html 
+# workers:
+#   resources:
+#     limits:
+#       cpu: "1000m"
+#       memory: "2Gi"
+#     requests:
+#       cpu: "500m"
+#       memory: "1Gi"
+
+# dags:
+#   gitSync:
+#     enabled: true
+#     repo: <git repo url using ssh>
+#     sshKeySecret: <ssh key secret>
